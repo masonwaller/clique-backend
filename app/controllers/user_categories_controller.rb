@@ -1,13 +1,15 @@
 class UserCategoriesController < ApplicationController
     def index
-        @users = UserCategory.all
+        @categories = UserCategory.all
+        render json: {usercat: @categories}
     end
     def new
-        @user = UserCategory.new
+        @usercat = UserCategory.new
     end
     def create
-        @user = User.new(usercat_params)
-        @user.save
+        @usercat = UserCategory.new(usercat_params)
+        @usercat.save
+        render json: {usercat: @usercat}
     end
 
     private

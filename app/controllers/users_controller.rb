@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         if @user && @user.authenticate(user_login_params[:password])
           puts @user
           # encode token comes from ApplicationController
-          render json: { user: @user }.to_json, status: :accepted
+          render json: { user: @user }, include: ['user_categories'], status: :accepted
         else
           render json: { message: 'Invalid username or password' }, status: :unauthorized
         end
