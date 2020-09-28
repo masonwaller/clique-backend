@@ -15,3 +15,4 @@ Category.create(name: "Drinking", desc: "Time to party!  Get lit with some new f
 Category.create(name: "Guns", desc: "Find people to meetup at shooting ranges or discuss guns and attachments with.")
 Category.create(name: "Foodie", desc: "Food, Food, FOOD!  If you love food meet up with other foodies here.")
 Category.create(name: "Sports", desc: "All around sports category, useful for creating a team or finding people to play pick up.")
+Category.create(name: "Netflix", desc: "Let's just netflix and chill.")

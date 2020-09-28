@@ -9,7 +9,12 @@ class UserCategoriesController < ApplicationController
     def create
         @usercat = UserCategory.new(usercat_params)
         @usercat.save
-        render json: {usercat: @usercat}
+        @user = User.find_by(id: @usercat.user_id)
+        render json: {user: @user}, include: ['user_categories']
+    end
+    def destroy
+        @usercat = UserCategory.find_by(id: params[:id])
+        @usercat.destroy
     end
 
     private
